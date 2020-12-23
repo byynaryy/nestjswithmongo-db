@@ -4,7 +4,7 @@ import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost/accounts', { useNewUrlParser: true })
+    MongooseModule.forRoot('mongodb://localhost/account', { useNewUrlParser: true })
   ],
   controllers: [AppController],
   providers: [AppService],
