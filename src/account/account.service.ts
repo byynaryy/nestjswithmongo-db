@@ -8,4 +8,11 @@ export class AccountService {
         const accounts = await this.accountModel.find().exec();
         return accounts;
     }
+    
+    // Get a single account
+    async getAccount(accountID): Promise<Account> {
+        const account = await this.accountModel.findById(accountID).exec();
+        return account;
+    }
+
 }
