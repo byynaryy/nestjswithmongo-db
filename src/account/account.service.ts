@@ -27,4 +27,11 @@ export class AccountService {
         const newAccount = await this.accountModel(createAccountDTO);
         return newAccount.save();
     }
+
+    // Update an account details
+    async updateAccount(accountID, createAccountDTO: createAccountDTO): Promise<Account> {
+        const updatedAccount = await this.accountModel
+            .findByIdAndUpdate(accountID, createAccountDTO, { new: true });
+        return updatedAccount;
+    }
 }
