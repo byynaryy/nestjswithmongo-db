@@ -34,4 +34,10 @@ export class AccountService {
             .findByIdAndUpdate(accountID, createAccountDTO, { new: true });
         return updatedAccount;
     }
+
+    // Delete an account
+    async deleteAccount(accountID): Promise<any> {
+        const deletedAccount = await this.accountModel.findByIdAndRemove(accountID);
+        return deletedAccount;
+    }
 }
